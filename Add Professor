@@ -1,0 +1,191 @@
+import javax.swing.JPanel;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class teste extends JPanel implements ActionListener{
+    
+   JTextField campoNome, campoMatricula,  campoEnd, campoDt;
+   JLabel Titulo, CNome, CMatricula, CEs, CEnd, CDt, CTitulo, CErro;
+   JButton botaoEnviar;
+   JCheckBox CheckBoxT1, CheckBoxT2, CheckBoxT3, CheckBoxT4;
+   JCheckBox CheckBoxE1, CheckBoxE2, CheckBoxE3, CheckBoxE4;
+   Color cor= new Color (255,45,78);
+ 
+public teste ()
+{ 
+      Titulo = new JLabel("Cadastrar Professor");
+      Titulo.setLocation(80,20);	
+      Titulo.setSize(600,60);
+      Titulo.setFont(new Font("Serif", Font.BOLD, 36));
+      Titulo.setForeground (cor);
+      
+      CMatricula = new JLabel("Código do Professor: ");
+      CMatricula.setLocation(30,120);
+      CMatricula.setSize(200,30);
+      CMatricula.setFont(new Font("Serif", Font.BOLD, 14));
+
+      campoMatricula = new JTextField("");
+      campoMatricula.setSize(400,30);
+      campoMatricula.setLocation(160,120);
+      campoMatricula.setFont(new Font("Serif", Font.BOLD, 24));
+      
+      CNome = new JLabel("Nome: ");
+      CNome.setLocation(30,160);
+      CNome.setSize(200,30);
+      CNome.setFont(new Font("Serif", Font.BOLD, 14));
+
+      campoNome = new JTextField("");
+      campoNome.setSize(400,30);
+      campoNome.setLocation(160,160);
+      campoNome.setFont(new Font("Serif", Font.BOLD, 24));
+      
+      CEnd = new JLabel("Endereço: ");
+      CEnd.setLocation(30,200);
+      CEnd.setSize(200,30);
+      CEnd.setFont(new Font("Serif", Font.BOLD, 14));
+
+      campoEnd = new JTextField("");
+      campoEnd.setSize(400,30);
+      campoEnd.setLocation(160,200);
+      campoEnd.setFont(new Font("Serif", Font.BOLD, 24));
+
+      CDt = new JLabel("Data de Nascimento: ");
+      CDt.setLocation(30,240);
+      CDt.setSize(200,30);
+      CDt.setFont(new Font("Serif", Font.BOLD, 14));
+      
+      campoDt = new JTextField("");
+      campoDt.setSize(400,30);
+      campoDt.setLocation(160,240);
+      campoDt.setFont(new Font("Serif", Font.BOLD, 24));
+      
+      CEs = new JLabel("Especialidade do professor: ");
+      CEs.setLocation(30,290);
+      CEs.setSize(200,30);
+      CEs.setFont(new Font("Serif", Font.BOLD, 14));
+      
+      CheckBoxE1 = new JCheckBox("Direito",false);
+      CheckBoxE1.setLocation(30,320);
+      CheckBoxE1.setSize(120,20);
+      //E1.addItemListener(this);
+      CheckBoxE1.setBackground(new Color(208,255,255));
+		
+      CheckBoxE2 = new JCheckBox("Informática",false);
+      CheckBoxE2.setLocation(30,340);
+      CheckBoxE2.setSize(120,20);
+      //E2.addItemListener(this);
+      CheckBoxE2.setBackground(new Color(208,255,255));
+		
+      CheckBoxE3 = new JCheckBox("Matemática",false);
+      CheckBoxE3.setLocation(30,360);
+      CheckBoxE3.setSize(120,20);
+      //E3.addItemListener(this);
+      CheckBoxE3.setBackground(new Color(208,255,255));
+		
+      CheckBoxE4 = new JCheckBox("Medicina",false);
+      CheckBoxE4.setLocation(30,380);
+      CheckBoxE4.setSize(120,20);
+      //E4.addItemListener(this);
+      CheckBoxE4.setBackground(new Color(208,255,255));
+
+
+      CTitulo= new JLabel("Título do professor: ");
+      CTitulo.setLocation(30,420);
+      CTitulo.setSize(200,30);
+      CTitulo.setFont(new Font("Serif", Font.BOLD, 14));
+
+      CheckBoxT1 = new JCheckBox("Bacharel",false);
+      CheckBoxT1.setLocation(30,450);
+      CheckBoxT1.setSize(120,20);
+      //T1.addItemListener(this);
+      CheckBoxT1.setBackground(new Color(208,255,255));
+		
+      CheckBoxT2 = new JCheckBox("Latu Sensu",false);
+      CheckBoxT2.setLocation(30,470);
+      CheckBoxT2.setSize(120,20);
+      //T2.addItemListener(this);
+      CheckBoxT2.setBackground(new Color(208,255,255));
+		
+      CheckBoxT3 = new JCheckBox("Mestrado",false);
+      CheckBoxT3.setLocation(30,490);
+      CheckBoxT3.setSize(120,20);
+      //T3.addItemListener(this);
+      CheckBoxT3.setBackground(new Color(208,255,255));
+		
+      CheckBoxT4 = new JCheckBox("Doutorado",false);
+      CheckBoxT4.setLocation(30,510);
+      CheckBoxT4.setSize(120,20);
+      //T4.addItemListener(this);
+      CheckBoxT4.setBackground(new Color(208,255,255));
+      
+      botaoEnviar = new JButton("Enviar");
+      botaoEnviar.setSize(150,40);
+      botaoEnviar.setLocation(300,480);
+      botaoEnviar.setBackground(new Color(150,220,255));
+      botaoEnviar.addActionListener(this);
+      botaoEnviar.setFont(new Font("Times New Roman", Font.BOLD, 16));      
+      botaoEnviar.setBackground(new Color(150,220,255));
+      
+      CErro = new JLabel(" ");//Parar erro
+      CErro.setLocation(30,260);
+      CErro.setSize(200,30);
+		
+}
+
+ public void actionPerformed(ActionEvent e)
+   {
+      
+	        JOptionPane.showMessageDialog(null, " Cadastrado!");
+   }
+}
+
+import javax.swing.JFrame;
+
+
+public class menuprincipal extends JFrame{
+       
+ 
+ 
+public menuprincipal ()
+{  
+    
+      this.setTitle("Menu");
+      this.setSize(600,600);
+      this.setLocation(80,70);
+      this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      this.setVisible(true); 
+        
+       teste t = new teste ();
+      
+     
+      getContentPane().add(t.Titulo);
+      getContentPane().add(t.CNome);
+      getContentPane().add(t.CMatricula);
+      getContentPane().add(t.campoNome);
+      getContentPane().add(t.campoMatricula);
+      getContentPane().add(t.CDt);
+      getContentPane().add(t.CTitulo);
+      getContentPane().add(t.campoDt);
+      getContentPane().add(t.CEnd);
+      getContentPane().add(t.CEs);
+      getContentPane().add(t.campoEnd);
+      getContentPane().add(t.CheckBoxT1);
+      getContentPane().add(t.CheckBoxT2);
+      getContentPane().add(t.CheckBoxT3);
+      getContentPane().add(t.CheckBoxT4);
+      getContentPane().add(t.CheckBoxE1);
+      getContentPane().add(t.CheckBoxE2);
+      getContentPane().add(t.CheckBoxE3);
+      getContentPane().add(t.CheckBoxE4);
+      getContentPane().add(t.botaoEnviar);
+      getContentPane().add(t.CErro);
+
+}
+
+public static void main (String arg[])
+	{
+		new menuprincipal().setVisible(true);
+	} 
+}
