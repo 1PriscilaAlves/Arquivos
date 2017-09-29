@@ -1,0 +1,120 @@
+import javax.swing.JPanel;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class teste extends JPanel implements ActionListener{
+    
+                    JTextField campoNome;
+                    JLabel Login, labelNome, labelSenha;
+                    JPasswordField campoSenha;
+                    Color cor= new Color (255,45,78);
+
+                    int Vezes = 0;
+                    
+   
+public teste ()
+{ 
+	
+      Login = new JLabel("Login");
+      Login.setLocation(80,20);	
+      Login.setSize(600,60);
+      Login.setFont(new Font("Serif", Font.BOLD, 36));
+      Login.setForeground (cor);
+     
+      labelNome = new JLabel("Nome: ");
+      labelNome.setLocation(40,300);
+      labelNome.setSize(100,30);
+      labelNome.setFont(new Font("Serif", Font.BOLD, 24));
+
+      campoNome = new JTextField("");
+      campoNome.setSize(280,30);
+      campoNome.setLocation(160,300);
+      campoNome.setFont(new Font("Serif", Font.BOLD, 24));
+
+      labelSenha = new JLabel("Senha: ");
+      labelSenha.setLocation(40,380);
+      labelSenha.setSize(150,30);
+      labelSenha.setFont(new Font("Serif", Font.BOLD, 24));
+		
+      JPasswordField campoSenha = new JPasswordField();
+      this.campoSenha = campoSenha ;
+      campoSenha.setEchoChar('*');
+      campoSenha.setSize(150,30);
+      campoSenha.setLocation(160,380);
+      campoSenha.addActionListener(this);
+      campoSenha.setFont(new Font("Serif", Font.BOLD, 24));
+
+      
+   }
+  
+
+   public void actionPerformed(ActionEvent e)
+   {
+      Vezes = Vezes + 1;
+
+      if((campoNome.getText().equals("admin")) && (campoSenha.getText().equals("admin")))
+         JOptionPane.showMessageDialog(null,campoNome.getText() + " ,VOCÊ ACERTOU A SENHA!");
+      else
+      {
+         if(Vezes == 3)
+         {
+            JOptionPane.showMessageDialog(null,"TENTE MAIS TARDE!");
+  	        System.exit(0);
+	     }
+         else
+	        JOptionPane.showMessageDialog(null,"SENHA ERRADA! TENTE NOVAMENTE!");
+      }
+   }
+}
+
+
+
+import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class menuprincipal extends JFrame {
+     
+ 
+ 
+public menuprincipal()
+{  
+    
+        
+       setTitle("Sistema de Gestão Escolar");
+       
+		setResizable(false);   // altera tamanho
+		setLocation(65,20);	
+                setSize(600,600);
+                //setBounds(100,100,400,300);
+		setBackground(Color.gray);
+                setExtendedState(JFrame.MAXIMIZED_BOTH);  
+                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+        
+        
+      
+       teste t = new teste ();
+
+      getContentPane().setLayout(null);
+      getContentPane().add(t.Login);
+      getContentPane().add(t.labelNome);
+      getContentPane().add(t.labelSenha);
+      getContentPane().add(t.campoNome);
+      getContentPane().add(t.campoSenha);
+
+      
+      
+                }
+        
+ 
+public static void main (String arg[])
+	{
+		new menuprincipal().setVisible(true);
+	}
+}
